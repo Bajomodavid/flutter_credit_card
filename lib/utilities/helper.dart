@@ -54,8 +54,8 @@ Widget getCardTypeIcon({CardType cardType, String cardNumber}) {
     case CardType.visa:
       return Image.asset(
         "images/card_provider/visa.png",
-        width: 55,
-        height: 40,
+        width: 45,
+        height: 30,
         package: 'flutter_credit_card',
       );
     default:
