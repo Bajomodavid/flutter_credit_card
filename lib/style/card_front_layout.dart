@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardFrontLayout {
   String bankName;
@@ -14,8 +16,8 @@ class CardFrontLayout {
   CardFrontLayout(
       {this.bankName = "",
       this.cardNumber = "",
-      this.cardExpiry = "",
-      this.cardHolderName = "",
+      this.cardExpiry = "--/--",
+      this.cardHolderName = "----------",
       this.cardNumberFontSize = 20,
       this.cardTypeIcon,
       this.cardWidth,
@@ -24,119 +26,92 @@ class CardFrontLayout {
 
   Widget layout1() {
     return Container(
-      width: cardWidth,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 8, 20, 10),
+      decoration: BoxDecoration(
+        color: Color(0XFF0A2C4E),
+        borderRadius: BorderRadius.circular(10)
+      ),
+      margin: EdgeInsets.all(10),
+      child: Container(
+        margin: EdgeInsets.all(10),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(
-              height: 8,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  height: 30,
-                  child: Center(
-                    child: Text(
-                      bankName,
-                      style: TextStyle(
-                          color: textColor,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: new Image.asset(
-                      'images/contactless_icon.png',
-                      fit: BoxFit.fitHeight,
-                      width: 30.0,
-                      height: 30.0,
-                      color: textColor,
-                      package: 'flutter_credit_card',
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Container(
-                child: Image.asset(
-                  "images/chip.png",
-                  package: "flutter_credit_card",
-                  fit: BoxFit.fitHeight,
-                  width: 50.0,
-                  height: 50.0,
-                ),
-              ),
-            ),
+          children: [
             Container(
-              margin: EdgeInsets.only(bottom: 5, top: 5),
-              child: Center(
-                child: Text(
-                  cardNumber == null || cardNumber.isEmpty
-                      ? 'XXXX XXXX XXXX XXXX'
-                      : cardNumber,
-                  style: TextStyle(
-                      package: 'flutter_credit_card',
-                      color: textColor,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "MavenPro",
-                      fontSize: cardNumberFontSize),
-                ),
-              )
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 5),
-                    child: Column(
-                      children: [
-                        Container(
-                          child: Text("VALID", style: TextStyle(
-                            fontSize: 9,
-                            color: Colors.white,
-                          ))
-                        ),
-                        Container(
-                          child: Text("THRU", style: TextStyle(
-                            fontSize: 9,
-                            color: Colors.white,
-                          ))
-                        )
-                      ],
-                    ),
+                    child: SvgPicture.asset("images/chip.svg")
                   ),
                   Container(
-                    child: Text(
-                      cardExpiry == null || cardExpiry.isEmpty
-                          ? "MM/YY"
-                          : cardExpiry,
-                      style: TextStyle(
-                          package: 'flutter_credit_card',
-                          color: textColor,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: "MavenPro",
-                          fontSize: 16),
-                    )
-                  ),
-                  cardTypeIcon
+                    child: SvgPicture.asset("images/circular_check.svg")
+                  )
                 ]
               )
-            )
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 20, bottom: 20),
+              child: Text(
+                cardNumber == null || cardNumber.isEmpty
+                ? '* * * *  * * * *  * * * *  * * * *'
+                : cardNumber,
+                style: GoogleFonts.dmSans(
+                color: Colors.white,
+                fontSize: cardNumberFontSize,
+              ))
+            ),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          child: Text("Card Holder Name", style: GoogleFonts.dmSans(
+                            fontSize: 11,
+                            color: Color(0XFF999999)
+                          ),),
+                        ),
+                        Container(
+                          child: Text(cardHolderName, style: GoogleFonts.dmSans(
+                            fontSize: 11,
+                            color: Color(0XFF999999)
+                          ),),
+                        ),
+                      ],
+                    )
+                  ),
+                  Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          child: Text("Expiry Date", style: GoogleFonts.dmSans(
+                            fontSize: 11,
+                            color: Color(0XFF999999)
+                          ),),
+                        ),
+                        Container(
+                          child: Text(cardExpiry, style: GoogleFonts.dmSans(
+                            fontSize: 11,
+                            color: Color(0XFF999999)
+                          ),),
+                        ),
+                      ],
+                    )
+                  ),
+                  Container(
+                    child: cardTypeIcon,
+                  )
+                ]
+              )
+            ),
           ],
         ),
-      )
+      ),
     );
   }
 }
+
+
