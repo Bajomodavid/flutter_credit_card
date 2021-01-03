@@ -106,6 +106,7 @@ class CardFrontLayout {
               )
             ),
             Container(
+              margin: EdgeInsets.only(top: 20),
               alignment: Alignment.centerRight,
               child: cardTypeIcon,
             )
