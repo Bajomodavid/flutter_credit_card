@@ -35,6 +35,8 @@ Widget getCardTypeIcon({CardType cardType, String cardNumber}) {
     case CardType.masterCard:
       return SvgPicture.asset(
         "images/card_provider/mastercard.svg",
+        width: 45,
+        height: 30,
         package: 'flutter_credit_card',
       );
     case CardType.maestro:
