@@ -1,5 +1,6 @@
 import 'package:flutter_credit_card/utilities/card_type.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 Widget getCardTypeIcon({CardType cardType, String cardNumber}) {
   switch (cardType == null ? getCardType(cardNumber) : cardType) {
@@ -32,10 +33,8 @@ Widget getCardTypeIcon({CardType cardType, String cardNumber}) {
         package: 'flutter_credit_card',
       );
     case CardType.masterCard:
-      return Image.asset(
-        "images/card_provider/master_card.png",
-        width: 55,
-        height: 40,
+      return SvgPicture.asset(
+        "images/card_provider/mastercard.svg",
         package: 'flutter_credit_card',
       );
     case CardType.maestro:
