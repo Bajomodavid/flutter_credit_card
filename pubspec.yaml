@@ -28,6 +28,8 @@ flutter:
   assets:
     - images/
     - images/card_provider/
+    - images/circular_check.svg
+    - images/chip.svg
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages
