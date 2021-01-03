@@ -102,12 +102,13 @@ class CardFrontLayout {
                       ],
                     )
                   ),
-                  Container(
-                    child: cardTypeIcon,
-                  )
                 ]
               )
             ),
+            Container(
+              alignment: Alignment.centerRight,
+              child: cardTypeIcon,
+            )
           ],
         ),
       ),
