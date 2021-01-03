@@ -40,10 +40,10 @@ class CardFrontLayout {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    child: SvgPicture.asset("images/chip.svg")
+                    child: SvgPicture.asset("images/chip.svg", package: "flutter_credit_card",)
                   ),
                   Container(
-                    child: SvgPicture.asset("images/circular_check.svg")
+                    child: SvgPicture.asset("images/circular_check.svg", package: "flutter_credit_card",)
                   )
                 ]
               )
