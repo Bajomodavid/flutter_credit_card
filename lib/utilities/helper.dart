@@ -61,7 +61,12 @@ Widget getCardTypeIcon({CardType cardType, String cardNumber}) {
         package: 'flutter_credit_card',
       );
     default:
-      return Container();
+      return Image.asset(
+        "images/card_provider/verve.png",
+        width: 45,
+        height: 30,
+        package: 'flutter_credit_card',
+      );
   }
 }
 

@@ -68,18 +68,11 @@ class CardFrontLayout {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          child: Text("Card Holder Name", style: GoogleFonts.dmSans(
-                            fontSize: 11,
-                            color: Color(0XFF999999)
-                          ),),
-                        ),
-                        Container(
-                          child: Text(cardHolderName, style: GoogleFonts.dmSans(
-                            fontSize: 11,
-                            color: Color(0XFF999999)
-                          ),),
-                        ),
+                      Container(
+                        margin: EdgeInsets.only(top: 10),
+                        alignment: Alignment.centerLeft,
+                        child: cardTypeIcon,
+                      )
                       ],
                     )
                   ),
@@ -106,7 +99,7 @@ class CardFrontLayout {
               )
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: EdgeInsets.only(top: 10),
               alignment: Alignment.centerRight,
               child: cardTypeIcon,
             )
