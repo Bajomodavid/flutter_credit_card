@@ -49,7 +49,7 @@ class CardFrontLayout {
               )
             ),
             Container(
-              margin: EdgeInsets.only(top: 20, bottom: 20),
+              margin: EdgeInsets.only(top: 10, bottom: 10),
               child: Text(
                 cardNumber == null || cardNumber.isEmpty
                 ? '* * * *  * * * *  * * * *  * * * *'
@@ -69,7 +69,6 @@ class CardFrontLayout {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                       Container(
-                        margin: EdgeInsets.only(top: 10),
                         alignment: Alignment.centerLeft,
                         child: cardTypeIcon,
                       )
