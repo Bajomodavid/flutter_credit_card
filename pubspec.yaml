@@ -2,7 +2,7 @@ name: flutter_credit_card
 description: A Flutter package for creating credit card widget.
 version: 0.0.1
 author: Bajomo David <bajomodavid@gmail.com>
-homepage:
+homepage: https://github.com/Bajomodavid/flutter_credit_card
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^0.19.1
-  google_fonts: ^1.1.0
+  google_fonts: ^2.1.0
 
 dev_dependencies:
   flutter_test:
